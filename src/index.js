@@ -11,6 +11,7 @@ import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import MoviesContextProvider from "./contexts/moviesContext";
+import AddMovieReviewPage from './pages/addMovieReviewPage';
 
 // Declare query client for cache
 const queryClient = new QueryClient({
@@ -27,20 +28,21 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-          <SiteHeader />      {/* New Header  */}
-          <MoviesContextProvider>
-            {" "}
+        <SiteHeader />      {/* New Header  */}
+        <MoviesContextProvider>
+          {" "}
           <Switch>
-        <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
-        <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-        <Route path="/movies/:id" component={MoviePage} />
-        <Route exact path="/" component={HomePage} />
-        <Route path="/reviews/:id" component={MovieReviewPage} />
-        <Redirect from="*" to="/" />
-      </Switch>
-      </MoviesContextProvider>
-    </BrowserRouter>
-    <ReactQueryDevtools initialIsOpen={false} />
+            <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+            <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+            <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+            <Route path="/movies/:id" component={MoviePage} />
+            <Route exact path="/" component={HomePage} />
+            <Route path="/reviews/:id" component={MovieReviewPage} />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </MoviesContextProvider>
+      </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 };
