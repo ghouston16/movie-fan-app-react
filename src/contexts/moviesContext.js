@@ -14,8 +14,15 @@ const MoviesContextProvider = (props) => {
   const addToFavorites = (movie) => {
     setFavorites([...favorites,movie.id])
   };
+  // Add movie to watchlist
   const addToWatchlist = (movie) => {
     setWatchlist([...watchlist, movie.id])
+  };
+  // Remove from Watchlist 
+  const removeFromWatchlist = (movie) => {
+    setWatchlist( watchlist.filter(
+      (mId) => mId !== movie.id
+    ) )
   };
   // We will use this function in a later section
   const removeFromFavorites = (movie) => {
@@ -32,7 +39,8 @@ const MoviesContextProvider = (props) => {
         removeFromFavorites,
         addReview,
         watchlist,
-        addToWatchlist
+        addToWatchlist,
+        removeFromWatchlist
       }}
     >
       {props.children}
