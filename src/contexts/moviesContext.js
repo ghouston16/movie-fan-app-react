@@ -6,11 +6,11 @@ const MoviesContextProvider = (props) => {
   const [ myReviews, setMyReviews ] = useState( {} );
   const [ favorites, setFavorites ] = useState( [] );
   const [ watchlist, setWatchlist ] = useState( [] );
-
+  // Add movie review
   const addReview = (movie, review) => {
     setMyReviews( {...myReviews, [movie.id]: review } )
   };
-
+  // Add movie to favorites
   const addToFavorites = (movie) => {
     setFavorites([...favorites,movie.id])
   };
