@@ -1,10 +1,10 @@
 import React, { useState} from "react";
 import Drawer from "@material-ui/core/Drawer";
-//import TvShowReviews from "../tvShowReviews"
+import TvShowReviews from "../tvShowReviews"
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
-import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import MonetizationIcon from "@material-ui/icons/MonetizationOn";
+//import AccessTimeIcon from "@material-ui/icons/AccessTime";
+//import MonetizationIcon from "@material-ui/icons/MonetizationOn";
 import StarRate from "@material-ui/icons/StarRate";
 import NavigationIcon from "@material-ui/icons/Navigation";
 import Fab from "@material-ui/core/Fab";
@@ -81,6 +81,9 @@ const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
         <NavigationIcon />
         Reviews
       </Fab>
+      <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+        <TvShowReviews tvShow={tvShow} />
+      </Drawer>
     </>
   );
 };
