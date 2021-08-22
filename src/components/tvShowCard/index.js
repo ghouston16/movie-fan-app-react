@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 
 export default function TvShowCard({ tvShow, action }) {
   const classes = useStyles();
-  /*
+/*  
   const { tvFavorites } = useContext(TvShowsContext);
 
   if (tvFavorites.find((id) => id === tvShow.id)) {
@@ -34,7 +34,7 @@ export default function TvShowCard({ tvShow, action }) {
   } else {
     tvShow.tvFavorite = false
   }
-/*
+
   const handleAddToTvFavorite = (e) => {
     e.preventDefault();
     addToTvFavorites(tvShow);
@@ -56,7 +56,7 @@ export default function TvShowCard({ tvShow, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {tvShow.release_date}
+              {tvShow.first_air_date}
             </Typography>
           </Grid>
           <Grid item xs={6}>
