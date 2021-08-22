@@ -14,7 +14,8 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import WatchlistMoviesPage from './pages/watchlistMoviesPage';
 import TvShowsPage from './pages/tvShowsPage';
-;// Declare query client for cache
+import TvShowPage from './pages/tvShowDetailsPage';
+// Declare query client for cache
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -38,6 +39,7 @@ const App = () => {
             <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
             <Route exact path="/movies/watchlist" component={WatchlistMoviesPage} />
             <Route exact path="/tvshows" component={TvShowsPage} />
+            <Route exact path="/tvshows/:id" component={TvShowPage} />
             <Route path="/movies/:id" component={MoviePage} />
             <Route exact path="/" component={HomePage} />
             <Route path="/reviews/:id" component={MovieReviewPage} />
