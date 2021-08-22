@@ -13,8 +13,11 @@ import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import WatchlistMoviesPage from './pages/watchlistMoviesPage';
+/// new import staements for TV show functionality
 import TvShowsPage from './pages/tvShowsPage';
 import TvShowPage from './pages/tvShowDetailsPage';
+import TvShowReviewPage from './pages/tvShowReviewPage';
+import TvShowsContextProvider from "./contexts/tvShowsContext";
 // Declare query client for cache
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,6 +35,7 @@ const App = () => {
       <BrowserRouter>
         <SiteHeader />      {/* New Header  */}
         <MoviesContextProvider>
+        <TvShowsContextProvider>
           {" "}
           <Switch>
             <Route exact path="/reviews/form" component={AddMovieReviewPage} />
@@ -43,10 +47,13 @@ const App = () => {
             <Route path="/movies/:id" component={MoviePage} />
             <Route exact path="/" component={HomePage} />
             <Route path="/reviews/:id" component={MovieReviewPage} />
+            <Route path="/tvReviews/:id" component={TvShowReviewPage} />
             <Redirect from="*" to="/" />
           </Switch>
+          </TvShowsContextProvider>
         </MoviesContextProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+  
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
