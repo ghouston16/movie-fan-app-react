@@ -13,11 +13,12 @@ import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import WatchlistMoviesPage from './pages/watchlistMoviesPage';
-/// new import staements for TV show functionality
+// new import statements for TV show functionality
 import TvShowsPage from './pages/tvShowsPage';
 import TvShowPage from './pages/tvShowDetailsPage';
 import TvShowReviewPage from './pages/tvShowReviewPage';
 import TvShowsContextProvider from "./contexts/tvShowsContext";
+import UpcomingTvShowsPage from "./pages/upcomingTvShowsPage";
 // Declare query client for cache
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -48,6 +49,7 @@ const App = () => {
             <Route exact path="/" component={HomePage} />
             <Route path="/reviews/:id" component={MovieReviewPage} />
             <Route path="/tvReviews/:id" component={TvShowReviewPage} />
+            <Route path='/tv/today' component={UpcomingTvShowsPage} />
             <Redirect from="*" to="/" />
           </Switch>
           </TvShowsContextProvider>

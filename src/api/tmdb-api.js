@@ -77,7 +77,7 @@ export const getTvShows = async () => {
 };
 export const getUpcomingTvShows = async () => {
   const response = await fetch(
-    `https://api.themoviedb.org/3/tv/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    `https://api.themoviedb.org/3/tv/airing_today?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&timezone=GMT+1:00&include_adult=false&include_video=false&page=1`
     //`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
   );
   if (!response.ok) {
