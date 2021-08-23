@@ -19,6 +19,7 @@ import TvShowPage from './pages/tvShowDetailsPage';
 import TvShowReviewPage from './pages/tvShowReviewPage';
 import TvShowsContextProvider from "./contexts/tvShowsContext";
 import UpcomingTvShowsPage from "./pages/upcomingTvShowsPage";
+import FavoriteTvShowsPage from "./pages/favoriteTvShowsPage";
 // Declare query client for cache
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,6 +51,7 @@ const App = () => {
             <Route path="/reviews/:id" component={MovieReviewPage} />
             <Route path="/tvReviews/:id" component={TvShowReviewPage} />
             <Route path='/tv/today' component={UpcomingTvShowsPage} />
+            <Route path="/tv/favorites" component={FavoriteTvShowsPage} />
             <Redirect from="*" to="/" />
           </Switch>
           </TvShowsContextProvider>

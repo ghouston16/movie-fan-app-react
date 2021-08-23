@@ -29,11 +29,12 @@ const SiteHeader = ( { history }) => {
 
   const menuOptions = [
     { label: "Home", path: "/" },
-    { label: "Favorites", path: "/movies/favorites" },
+    { label: "Favorite Movies", path: "/movies/favorites" },
     { label: "Upcoming", path: "/movies/upcoming" },
-    { label: "Watchlist", path: "/movies/watchlist" },
+    { label: "Movie Watchlist", path: "/movies/watchlist" },
     { label: "Discover TV", path: "/tvshows" },
-    { label: "Today's TV", path: "/tv/today" }
+    { label: "Today's TV", path: "/tv/today" },
+    { label: "Favorite TV", path: "/tv/favorites"}
   ];
 
   const handleMenuSelect = (pageURL) => {
