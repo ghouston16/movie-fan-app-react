@@ -356,33 +356,37 @@ Sample Response:
 
 ### Component catalogue.
 
-....... Insert a screenshot from the Storybook UI showing your component catalogue. [For the Movies app, hi-light stories relating to new/modified components - see the example screenshot below] .......
-
-![][stories]
+Screenshots can be seen in '/moviesFanApp/public/screenshots/storybookscreen.jpg'. All Tv Related Components have been added by me.
 
 ### UI Design.
 
++ 
 ...... Insert screenshots of the app's views, with appropriate captions (see example below). (For the Movies Fan App, only show the new/modified views) ........
 
 ![][view]
->Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+> Movies watchlist view allows user to remove from watchlist by clicking button and can view movie details via 'More Info Button
+'
+>Shows detailed information on a tv show. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+
+>Shows Todays airing Tv canbe dded to watchlist clicking button
+
+>Favorites View Allows user to remove from favorites and to click button to write a review of the show.
+
+> Write a review form view allows user to write a TV review and rate the show
+
+> View a review in full
 
 ### Routing.
 
-...... Insert a list of the routes supported by your app and state the associated view. If relevant, specify which of the routes require authentication, i.e. protected/private. [For the Movies Fan app, only new routes should be listed.] ......... 
-
-+ GET /blogs - displays all published blogs.
-+ POST /blogs (protected) - add a new blog.
-+ GET /blogs/:id - displays a particular blog.
-+ GET /blogs/:id/comments (protected) - detail view of a particular blog and its comments.
-+ etc.
-+ etc.
-
-## Independent learning (If relevant).
-
-....... Briefly state any technologies/techniques used in your project codebase that was not covered in the lectures/labs. Provide source code filename (source code excerpts are not required in most cases) references to support your assertions and include references (articles/blogs) ......... 
++ GET '/tvshows/:id" - Tv Details Page
++ GET '/movies/watchlist" = Watchlist Movies Page
++ GET "/tvshows" - Discover tv/Tv Shows List Page
++ GET "/tvReviews/:id" - Tv Show Review Page view indiviual review
++ GET '/tv/today'- Upcoming Tv Shows Page
++ GET "/tv/favorites" - FavoriteTvShowsPage
++ GET "/tv/reviewform" = AddTvReviewPage 
 
 
 [model]: ./data.jpg
 [view]: ./view.png
-[stories]: ./storybook.png
+[stories]: ./screenshots/storybookscreen.jpg
