@@ -26,23 +26,22 @@ const useStyles = makeStyles({
 
 export default function TvShowCard({ tvShow, action }) {
   const classes = useStyles();
-/*  
   const { tvFavorites } = useContext(TvShowsContext);
 
   if (tvFavorites.find((id) => id === tvShow.id)) {
-    tvShow.tvFavorite = true;
+    tvShow.favorite = true;
   } else {
-    tvShow.tvFavorite = false
+    tvShow.favorite = false
   }
-
-  const handleAddToTvFavorite = (e) => {
+/*
+  const handleAddToFavorite = (e) => {
     e.preventDefault();
-    addToTvFavorites(tvShow);
+    addToFavorites(tvShow);
   };
 */
   return (
     <Card className={classes.card}>
-      <CardHeader className={classes.header} title={tvShow.title} />
+      <CardHeader className={classes.header} title={tvShow.name} />
       <CardMedia
         className={classes.media}
         image={
@@ -56,7 +55,7 @@ export default function TvShowCard({ tvShow, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {tvShow.first_air_date}
+              {tvShow.release_date}
             </Typography>
           </Grid>
           <Grid item xs={6}>
@@ -68,7 +67,7 @@ export default function TvShowCard({ tvShow, action }) {
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-       {}
+        {action(tvShow)}
 
         <Link to={`/tvShows/${tvShow.id}`}>
           <Button variant="outlined" size="medium" color="primary">

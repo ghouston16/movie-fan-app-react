@@ -3,7 +3,7 @@ import PageTemplate from "../components/templateTvShowListPage";
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import {getTvShows} from '../api/tmdb-api';
-import AddToFavoritesIcon from "../components/cardIcons/addToTvFavorites";
+import AddToTvFavoritesIcon from "../components/cardIcons/addToTvFavorites";
 import AddToWatchlistIcon from "../components/cardIcons/addToWatchlist";
 
 
@@ -21,8 +21,8 @@ const TvShowsPage = (props) => {
   console.log(tvShows);
 
   // Redundant, but necessary to avoid app crashing.
-  const favorites = tvShows.filter(m => m.favorite)
-  localStorage.setItem('favorites', JSON.stringify(favorites))
+  const tvFavorites = tvShows.filter(m => m.tvFavorite)
+  localStorage.setItem('tvFavorites', JSON.stringify(tvFavorites))
  // const addToFavorites = (tvShowId) => true 
 
   return (
@@ -30,7 +30,7 @@ const TvShowsPage = (props) => {
       title="TV"
       tvShows={tvShows}
       action={(tvShow) => {
-        return <AddToWatchlistIcon tvShow={tvShow} />
+        return <AddToTvFavoritesIcon tvShow={tvShow} />
       }}
     />
 );

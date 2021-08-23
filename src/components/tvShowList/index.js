@@ -1,11 +1,11 @@
 import React from "react";
-import TvShow from "../tvShowCard/";
+import TvShow from "../tvShowCard";
 import Grid from "@material-ui/core/Grid";
 
-const TvShowList = (props) => {
-  let tvShowCards = props.tvShows.map((m) => (
+const TvShowList = ( {tvShows, action }) => {
+  let tvShowCards = tvShows.map((m) => (
     <Grid key={m.id} item xs={12} sm={6} md={4} lg={3} xl={2}>
-      <TvShow key={m.id} tvShow={m} />
+      <TvShow key={m.id} tvShow={m} action={action} />
     </Grid>
   ));
   return tvShowCards;
