@@ -7,8 +7,8 @@ const TvShowsContextProvider = (props) => {
   const [ tvFavorites, setTvFavorites ] = useState( [] );
   const [ tvWatchlist, setTvWatchlist ] = useState( [] );
   // Add tvShow review
-  const addTvReview = (tvShow, review) => {
-    setMyTvReviews( {...myTvReviews, [tvShow.id]: review } )
+  const addTvReview = (tvShow, tvReview) => {
+    setMyTvReviews( {...myTvReviews, [tvShow.id]: tvReview } )
   };
   // Add tvShow to favorites
   const addToTvFavorites = (tvShow) => {

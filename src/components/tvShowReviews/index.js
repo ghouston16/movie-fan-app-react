@@ -48,7 +48,7 @@ export default function TvShowReviews({ tvShow }) {
               <TableCell >
                 <Link
                   to={{
-                    pathname: `/tvReviews/${r.id}`,
+                    pathname: `/tvreviews/${r.id}`,
                     state: {
                       review: r,
                       tvShow: tvShow,
