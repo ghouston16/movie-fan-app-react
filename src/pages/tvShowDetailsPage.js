@@ -3,7 +3,8 @@ import { withRouter } from "react-router-dom";
 import TvShowDetails from "../components/tvShowDetails";
 import PageTemplate from "../components/templateTvShowPage";
 //import useTvShow from "../hooks/useTvShow";
-import { getTvShow } from '../api/tmdb-api'
+import { getTvShow } from '../api/tmdb-api';
+//import { getTvCast } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
 
@@ -12,7 +13,8 @@ const TvShowDetailsPage = (props) => {
 
   const { data: tvShow, error, isLoading, isError } = useQuery(
     ["tvShow", { id: id }],
-    getTvShow
+    getTvShow,
+  //  getTvCast
   );
 
   if (isLoading) {

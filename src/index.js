@@ -20,7 +20,7 @@ import TvShowReviewPage from './pages/tvShowReviewPage';
 import TvShowsContextProvider from "./contexts/tvShowsContext";
 import UpcomingTvShowsPage from "./pages/upcomingTvShowsPage";
 import FavoriteTvShowsPage from "./pages/favoriteTvShowsPage";
-import TvReviewPage from "./pages/tvShowReviewPage"
+//import TvShowReviewPage from "./pages/tvShowReviewPage"
 import AddTvReviewPage from "./pages/addTvReviewPage";
 // Declare query client for cache
 const queryClient = new QueryClient({

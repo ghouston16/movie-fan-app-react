@@ -17,6 +17,16 @@ export const getUpcomingMovies = async () => {
   }
   return response.json();
 };
+export const getTopRatedMovies = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    //`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
+  );
+  if (!response.ok) {
+    throw new Error(response.json().message);
+  }
+  return response.json();
+};
 export const getMovie = async (args) => {
   // console.log(args)
   // eslint-disable-next-line no-unused-vars
@@ -130,6 +140,17 @@ export const getTvShowReviews = (id) => {
     .then((res) => res.json())
     .then((json) => {
       // console.log(json.results);
+      return json.results;
+    });
+};
+
+export const getTvCast = (id) => {
+  return fetch(
+    `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json.results);
       return json.results;
     });
 };

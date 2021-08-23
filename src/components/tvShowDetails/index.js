@@ -72,6 +72,16 @@ const TvShowDetails = ({ tvShow }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
+      <Paper component="ul" className={classes.root}>
+        <li>
+          <Chip label="Seasons" className={classes.chip} color="primary" />
+        </li>
+        {tvShow.seasons.map((g) => (
+          <li key={g.name}>
+            <Chip label={g.name} className={classes.chip} />
+          </li>
+        ))}
+      </Paper>
       <Fab
         color="secondary"
         variant="extended"
